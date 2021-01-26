@@ -20,6 +20,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to XYZ application"})
 });
+// routes
+require("./app/routes/auth.routes")(app);
+require("./app/routes/user.routes")(app);
 
 // seting port, listen for requests
 const PORT = process.env.PORT || 8080;
